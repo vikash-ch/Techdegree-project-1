@@ -1,1 +1,1 @@
-# Techdegree Project 1
+# Techdegree Javascript Project 1
