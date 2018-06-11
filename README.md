@@ -1,1 +1,1 @@
-# Techdegree Javascript Project 1
+# Fullstack Javascript Techdegree (Project 1: Random Quote Generator)
