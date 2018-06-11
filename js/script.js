@@ -61,8 +61,18 @@ function printQuote() {
      }
 
      document.getElementById('quote-box').innerHTML = quoteString;
-     console.log(quoteString)
-  }
+
+     // change color per click
+     function rdmColorNumber() {
+       return Math.floor(Math.random() * 255)
+      }
+
+     var colorString = "rgb(" + rdmColorNumber() + "," + rdmColorNumber() + "," + rdmColorNumber() + ")";
+     document.body.style.background = String(colorString);
+    }
+
+
+var intervalID = window.setInterval(printQuote, 5000);
 
 
 getRandomQuote();
