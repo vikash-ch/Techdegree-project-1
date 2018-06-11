@@ -2,24 +2,25 @@
 
 
 //Database of quotes
-
 var quotes = [
   {
     quote: "It does not matter how slowly you go as long as you do not stop.",
     source: "Confucious",
-
+    category: "Motivation"
   },
 
   {
     quote: "Well done is better than well said",
     source: "Benjamin Franklin",
+    category: "Motivation"
   },
 
   {
     quote: "Keep your eyes on the stars, and your feet on the ground",
     source: "Theodore Roosevelt",
     citation: "Address at the prize day exercises at Groton School",
-    year: 1904
+    year: 1904,
+    category: "Motivation"
 
   },
 
@@ -27,7 +28,8 @@ var quotes = [
     quote: "Death is not the ultimate tragedy in life. The ultimate tragedy is to die without discovering the possibilities of full growth.",
     source: "Norman Cousins",
     citation: "Good Housekeeping",
-    year: 1989
+    year: 1989,
+    category: "Life"
 
   },
 
@@ -35,7 +37,8 @@ var quotes = [
     quote: "Whoever is careless with the truth in small matters cannot be trusted with important matters.",
     source: "Albert Einstein",
     citation: "Albert Einstein: Historical and Cultural Perspectives",
-    year: 1955
+    year: 1955,
+    category: "Truth"
 
   },
 
@@ -60,9 +63,11 @@ function printQuote() {
        quoteString += "<span class ='year'>" + selectedQuote.year +"</span>";
      }
 
+     quoteString += "<p class='category'>(" +selectedQuote.category + ")</p>"
+
      document.getElementById('quote-box').innerHTML = quoteString;
 
-     // change color per click
+     // randomly change background color after quote change
      function rdmColorNumber() {
        return Math.floor(Math.random() * 255)
       }
@@ -71,10 +76,10 @@ function printQuote() {
      document.body.style.background = String(colorString);
     }
 
-
+// automatically change quote every 5 seconds
 var intervalID = window.setInterval(printQuote, 5000);
 
-
+//initalize program
 getRandomQuote();
 printQuote ();
 
